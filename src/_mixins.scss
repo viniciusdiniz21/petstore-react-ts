@@ -1,0 +1,13 @@
+@mixin d-flex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin main-style ($main-color, $main-text-color){
+    background-color: $main-color;
+    color: $main-text-color;
+    width: 100%;
+    @include d-flex(column, center, center);
+}
