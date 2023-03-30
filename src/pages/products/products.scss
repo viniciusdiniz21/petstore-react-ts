@@ -1,0 +1,8 @@
+@import "../../_mixins.scss";
+
+.products{
+    @include main-style(#fff, rgb(20, 4, 48));
+    h1{
+        margin-bottom: 2rem;
+    }
+}

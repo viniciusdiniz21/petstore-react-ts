@@ -1,17 +1,19 @@
-import React from 'react'
-import './home.scss'
-import { Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import "./home.scss";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div className='home'>
+    <div className="home">
       <h1>Wellcome</h1>
-      <Button onClick={() => navigate("/")} variant="outlined">Products List</Button>
+      <Button onClick={() => navigate("/")} variant="outlined">
+        Products List
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
