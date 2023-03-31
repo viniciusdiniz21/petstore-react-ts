@@ -1,7 +1,7 @@
 @import "../../_mixins.scss";
 
 .products{
-    @include main-style(#fff, rgb(20, 4, 48));
+    @include main-style(#fff, #2a363b);
     h1{
         margin-bottom: 2rem;
     }
