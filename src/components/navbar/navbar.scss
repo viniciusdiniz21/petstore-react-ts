@@ -1,31 +1,72 @@
 @import "../../_mixins.scss";
 
 .navbar {
-    width: 100%;
-    height: 60px;
-    padding: 0 3rem;
-    background-color: #2a363b;
-    color: #fff;
-    @include d-flex(row, space-between, center);
-}
-
-.brand {
+  width: 100%;
+  height: 60px;
+  padding: 0 3rem;
+  background-color: #2a363b;
+  color: #fff;
+  @include d-flex(row, space-between, center);
+  .brand {
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #fff;
-}
+  }
 
-.hamburguer {
+  .hamburguer {
     display: none;
-}
+  }
 
-.menu {
+  .menu {
     flex: 1;
     margin-left: 2rem;
     ul {
-        @include d-flex(row, flex-start, center);
-        gap: 1rem;
+      @include d-flex(row, flex-start, center);
+      gap: 1rem;
+      .close {
+        display: none;
+      }
     }
+  }
+}
+
+@media (max-width: 769px) {
+  .navbar {
+    .hamburguer {
+      display: block;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+    .menu {
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      z-index: 10;
+      background-color: #2a363b;
+
+      &.open {
+        left: 0;
+      }
+      ul {
+        @include d-flex(column, center, center);
+        gap: 3rem;
+        height: 100%;
+        position: relative;
+        .close {
+          position: absolute;
+          top: 1rem;
+          right: 2rem;
+          font-size: 30px;
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
