@@ -35,8 +35,6 @@ export default function ModalDelete({ data }: { data: IProduct }) {
 
   const [loading, setLoading] = React.useState<boolean>(false);
 
-  const navigate = useNavigate();
-
   const handleDelete = async () => {
     setLoading(true);
     try {
@@ -49,6 +47,7 @@ export default function ModalDelete({ data }: { data: IProduct }) {
           window.location.reload();
         });
       });
+      return response;
     } catch (error) {
       Swal.fire({
         icon: "error",

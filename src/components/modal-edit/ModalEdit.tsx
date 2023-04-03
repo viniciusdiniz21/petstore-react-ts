@@ -31,8 +31,6 @@ export default function ModalEdit({ data }: { data: IProduct }) {
 
   var url: string = import.meta.env.VITE_URL;
 
-  const navigate = useNavigate();
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -52,6 +50,7 @@ export default function ModalEdit({ data }: { data: IProduct }) {
           window.location.reload();
         });
       });
+      return response;
     } catch (error) {
       Swal.fire({
         icon: "error",
