@@ -9,7 +9,12 @@ const Home: React.FC = () => {
   return (
     <div className="home">
       <h1>Wellcome</h1>
-      <Button onClick={() => navigate("/")} variant="outlined">
+      <Button
+        sx={{ width: 150, height: 150 }}
+        color="warning"
+        onClick={() => navigate("/products")}
+        variant="contained"
+      >
         Products List
       </Button>
     </div>

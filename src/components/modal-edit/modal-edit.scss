@@ -1,0 +1,11 @@
+@import "../../_mixins.scss";
+
+.modal-header{
+    @include d-flex(row, space-between, center);
+    margin-bottom: 2rem;
+}
+
+.modal-body{
+    @include d-flex(column, center, center);
+    gap: 1rem;
+}
