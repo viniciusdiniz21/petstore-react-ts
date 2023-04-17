@@ -67,6 +67,7 @@ export default function ModalDelete({ data }: { data: IProduct }) {
         size="small"
         color="error"
         variant="contained"
+        data-testid="open-modal"
       >
         <DeleteIcon />
       </Button>
@@ -79,9 +80,13 @@ export default function ModalDelete({ data }: { data: IProduct }) {
         <Box sx={style}>
           <Box className="modal-header">
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Delete
+              Delete Product
             </Typography>
-            <CloseIcon sx={{ cursor: "pointer" }} onClick={handleClose} />
+            <CloseIcon
+              data-testid="close"
+              sx={{ cursor: "pointer" }}
+              onClick={handleClose}
+            />
           </Box>
           <Box className="modal-body">
             <Avatar sx={{ bgcolor: red[400], width: 72, height: 72 }}>
@@ -91,6 +96,7 @@ export default function ModalDelete({ data }: { data: IProduct }) {
               Are you sure?
             </Typography>
             <Button
+              data-testid="delete"
               disabled={loading}
               color="error"
               variant="contained"
