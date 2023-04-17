@@ -11,7 +11,7 @@ import ModalDelete from "../modal-delete/ModalDelete";
 
 export default function ProductCard({ product }: { product: IProduct }) {
   return (
-    <Box sx={{ minWidth: 160 }}>
+    <Box data-testid="product-card" sx={{ minWidth: 160 }}>
       <Card variant="outlined">
         <React.Fragment>
           <CardContent>

@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       <Button
         sx={{ width: 150, height: 150 }}
         color="warning"
-        onClick={() => navigate("/products")}
+        onClick={() => navigate("../products")}
         variant="contained"
       >
         Products List

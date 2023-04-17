@@ -8,22 +8,22 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = React.useState<boolean>(false);
 
   const toggleMenu = () => {
-    if(window.innerWidth < 769){
-      setOpen(!open)
+    if (window.innerWidth < 769) {
+      setOpen(!open);
     }
-  }
+  };
 
-  const menuStyle = open ? "menu open" : "menu"
+  const menuStyle = open ? "menu open" : "menu";
 
   return (
     <div className="navbar">
       <div className="brand">Teste</div>
       <div className="hamburguer">
-        <MenuIcon onClick={toggleMenu}/>
+        <MenuIcon onClick={toggleMenu} />
       </div>
       <div className={menuStyle}>
         <ul>
-          <CloseIcon className="close" onClick={toggleMenu}/>
+          <CloseIcon className="close" onClick={toggleMenu} />
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
             <Link to="/products">Products</Link>
           </li>
           <li>
-            <Link to="/products/add">New Product</Link>
+            <Link to="/add">New Product</Link>
           </li>
         </ul>
       </div>

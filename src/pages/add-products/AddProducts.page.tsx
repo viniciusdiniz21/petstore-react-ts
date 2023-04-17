@@ -45,7 +45,7 @@ const AddProducts: React.FC = () => {
       const response = await axios.post<IProduct>(url, data).then((res) => {
         if (res.status == 200) {
           Swal.fire("Nice", "Product added successfully!", "success");
-          navigate("/products");
+          navigate("../products");
         }
       });
     } catch (error) {
