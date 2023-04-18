@@ -16,13 +16,13 @@ describe("ModalDelete", () => {
     updatedAt: "20/11/2021",
   };
 
-  it("should render the delete button", () => {
+  it("Precisa renderizar o botão que abre o modal", () => {
     render(<ModalDelete data={mockProducts} />);
     const deleteButton = screen.getByTestId("open-modal");
     expect(deleteButton).toBeInTheDocument();
   });
 
-  it("should open the modal when the delete button is clicked", () => {
+  it("Tem que abrir o modal", () => {
     const { getByText } = render(<ModalDelete data={mockProducts} />);
     const deleteButton = screen.getByTestId("open-modal");
     fireEvent.click(deleteButton);
@@ -30,7 +30,7 @@ describe("ModalDelete", () => {
     expect(modalTitle).toBeInTheDocument();
   });
 
-  it("should close the modal when the close button is clicked", async () => {
+  it("Tem que fechar o modal", async () => {
     const { queryByText } = render(<ModalDelete data={mockProducts} />);
     const deleteButton = screen.getByTestId("open-modal");
     fireEvent.click(deleteButton);
@@ -42,7 +42,7 @@ describe("ModalDelete", () => {
     });
   });
 
-  it("should call the handleDelete function when the delete button in the modal is clicked", async () => {
+  it("Tem que chamar a função de deletar passando url e id", async () => {
     vi.spyOn(axios, "delete").mockResolvedValueOnce({ data: mockProducts });
     render(<ModalDelete data={mockProducts} />);
     const deleteButton = screen.getByTestId("open-modal");
